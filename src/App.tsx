@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import './styles/App.css';
 import ListProducts from './components/ListProducts';
 import RegisterProduct from './components/RegisterProduct';
 
 function App() {
+//   const [register, setRegister] = useState({});
+//   const [products, setProducts] = useState([]);
+  const [component, setComponent] = useState(true);
+
   return (
     <div className="app">
       <header>
-        <button>Cadastrar</button>
-        <button>Ver produtos</button>
+        <button onClick={ () => setComponent(true) }>Cadastrar</button>
+        <button onClick={ () => setComponent(false) }>Ver produtos</button>
       </header>
-      <RegisterProduct />
-      <ListProducts products={ [] } />
+      {component ? (
+        <RegisterProduct handleSubmit={ () => null } />
+      ) : (
+        <ListProducts products={ [] } handleDelete={ () => null } />
+      )}
     </div>
   );
 }
