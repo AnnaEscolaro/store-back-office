@@ -3,7 +3,7 @@ import imgNotFound from '../assets/imgNotFound.png';
 import '../styles/Product.css';
 
 type Props = {
-  handleDelete?: (() => void) | undefined
+  handleDelete?: ((id: string | number) => void) | undefined
   productInfo: ProductWithId | ProductType
 };
 
@@ -16,7 +16,7 @@ export default function Product({
 
   return (
     <div data-testid="product-container" className="product-container">
-      {handleDelete && <button onClick={ handleDelete }>X</button>}
+      {handleDelete && <button onClick={ () => handleDelete(id) }>X</button>}
       <img src={ image || imgNotFound } alt={ name } />
       <h3>{name}</h3>
       <h4>
