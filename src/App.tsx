@@ -16,7 +16,7 @@ function App() {
       ...formData,
     };
 
-    const productWithId = Object.assign(...formData, { id: Date.now() });
+    // const productWithId = Object.assign(...formData, { id: Date.now() });
 
     setProducts([
       ...products,

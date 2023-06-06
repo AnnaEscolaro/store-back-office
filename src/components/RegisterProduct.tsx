@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import React from 'react';
+// import React from 'react';
 import Product from './Product';
 import '../styles/RegisterProduct.css';
 import { ProductType } from '../types';
@@ -60,19 +60,41 @@ export default function RegisterProduct(props: Props) {
           </label>
           <label htmlFor="description">
             Descrição
-            <input onChange={ handleChange } value={formData.description} type="text" id="description" required />
+            <input
+              onChange={ handleChange }
+              value={ formData.description }
+              type="text"
+              id="description"
+              required
+            />
           </label>
           <label htmlFor="price">
             Preço
-            <input onChange={ handleChange } value={formData.price} type="number" id="price" required />
+            <input
+              onChange={ handleChange }
+              value={ formData.price }
+              type="number"
+              id="price"
+              required
+            />
           </label>
           <label htmlFor="image">
             Imagem
-            <input onChange={ handleChange } value={formData.image} type="text" id="image" />
+            <input
+              onChange={ handleChange }
+              value={ formData.image }
+              type="text"
+              id="image"
+            />
           </label>
           <label htmlFor="tags">
             Tags
-            <input onChange={ handleChange } value={formData.tags} type="text" id="tags" />
+            <input
+              onChange={ handleChange }
+              value={ formData.tags }
+              type="text"
+              id="tags"
+            />
           </label>
           <button type="submit">Salvar</button>
         </form>
